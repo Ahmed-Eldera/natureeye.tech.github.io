@@ -63,10 +63,7 @@
                             <input type="text" id="country" name="country" class="form-control" placeholder="Enter your country" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
-                        </div>
+
 
                         <button type="submit" class="btn btn-main">Sign Up</button>
                     </form>
@@ -96,9 +93,9 @@
             country: document.getElementById('country').value.trim(),
         };
 
-        const password = document.getElementById('password').value;
+        // const password = document.getElementById('password').value;
         
-        if (!formData.name || !formData.org_name || !formData.org_type || !formData.position || !formData.email || !formData.phone || !formData.country || !password) {
+        if (!formData.name || !formData.org_name || !formData.org_type || !formData.position || !formData.email || !formData.phone || !formData.country ) {
             alert("Please fill in all fields.");
             return;
         }
@@ -118,7 +115,7 @@
             });
 
             if (response.ok) {
-                alert("Sign up successful! Redirecting to home.");
+                alert("Data Submitted! Redirecting to PCCM.");
                 // Redirect to the home page after successful submission
                 window.location.href = 'https://place-recommender-nel.happydune-822b097c.italynorth.azurecontainerapps.io/'; // or specify the full URL like 'https://yourwebsite.com'
             } else {
