@@ -64,21 +64,21 @@
             name: document.getElementById('name').value.trim(),
             email: document.getElementById('email').value.trim(),
             phone: document.getElementById('phone').value.trim(),
-            password: document.getElementById('password').value
-        };
 
-        if (!formData.name || !formData.email || !formData.phone || !formData.password) {
+        };
+        password= document.getElementById('password').value
+        if (!formData.name || !formData.email || !formData.phone || password) {
             alert("Please fill in all fields.");
             return;
         }
 
-        if (formData.password.length < 6) {
+        if (password.length < 6) {
             alert("Password must be at least 6 characters long.");
             return;
         }
 
         try {
-            const response = await fetch("https://formspree.io/f/meoekapy", {
+            const response = await fetch("https://formspree.io/f/xnnjvpwv", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
