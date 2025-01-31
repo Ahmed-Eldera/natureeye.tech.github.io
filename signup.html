@@ -28,6 +28,27 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="org_name">Organisation Name</label>
+                            <input type="text" id="org_name" name="org_name" class="form-control" placeholder="Enter your organisation name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="org_type">Organisation Type</label>
+                            <select id="org_type" name="org_type" class="form-control" required>
+                                <option value="">Select Organisation Type</option>
+                                <option value="academia">Academia</option>
+                                <option value="consultation_firm">Consultation Firm</option>
+                                <option value="government">Government</option>
+                                <option value="small_medium_projects">Small and Medium Projects</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="position">Your Position in the Organisation</label>
+                            <input type="text" id="position" name="position" class="form-control" placeholder="Enter your position" required>
+                        </div>
+
+                        <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                         </div>
@@ -35,6 +56,11 @@
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" name="country" class="form-control" placeholder="Enter your country" required>
                         </div>
 
                         <div class="form-group">
@@ -62,12 +88,17 @@
 
         const formData = {
             name: document.getElementById('name').value.trim(),
+            org_name: document.getElementById('org_name').value.trim(),
+            org_type: document.getElementById('org_type').value,
+            position: document.getElementById('position').value.trim(),
             email: document.getElementById('email').value.trim(),
             phone: document.getElementById('phone').value.trim(),
-
+            country: document.getElementById('country').value.trim(),
         };
-        password= document.getElementById('password').value
-        if (!formData.name || !formData.email || !formData.phone || !password) {
+
+        const password = document.getElementById('password').value;
+        
+        if (!formData.name || !formData.org_name || !formData.org_type || !formData.position || !formData.email || !formData.phone || !formData.country || !password) {
             alert("Please fill in all fields.");
             return;
         }
@@ -89,7 +120,7 @@
             if (response.ok) {
                 alert("Sign up successful! Redirecting to home.");
                 // Redirect to the home page after successful submission
-                window.location.href = 'https://ahmed-eldera.github.io/natureeye.tech.github.io/'; // or specify the full URL like 'https://yourwebsite.com'
+                window.location.href = 'https://place-recommender-nel.happydune-822b097c.italynorth.azurecontainerapps.io/'; // or specify the full URL like 'https://yourwebsite.com'
             } else {
                 alert("Something went wrong. Please try again.");
             }
@@ -99,7 +130,6 @@
         }
     });
 </script>
-
 
 </body>
 </html>
